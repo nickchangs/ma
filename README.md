@@ -3,13 +3,10 @@
 再用wget將所有網頁更新至前台及app
 更新方式如下：
   
-前台維謢時間頁面：
-  
-curl -s https://raw.githubusercontent.com/nickchangs/ma/master/maintain.html -o "/opt/Htdocs/ma/maintain.html"
+1.前台維謢時間頁面：
 
-curl -s https://raw.githubusercontent.com/nickchangs/ma/master/wap_maintain.html -o "/opt/Htdocs/ma/wap_maintain.html"
 
-APP維謢時間頁面：
+2.APP維謢時間頁面：
 
 curl -s https://raw.githubusercontent.com/nickchangs/ma/master/ma.conf -o "/opt/APP/openresty/nginx/conf/ma/ma.conf"
 
