@@ -1,8 +1,8 @@
 #!/bin/bash
-if [ ! -n "$1" ]; then
+if [[ -z $1 ]]; then
 	$1='07:00'
 fi
-if [ ! -n "$2" ]; then
+if [[ -z $2 ]]; then
     $2='08:00'
 fi
 echo "把vhost所有conf改MAN為1"
