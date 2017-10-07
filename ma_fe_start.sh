@@ -1,4 +1,10 @@
 #!/bin/bash
+if [ ! $1 ]; then
+	$1='07:00'
+fi
+if [ ! $2 ]; then
+    $2='08:00'
+fi
 echo "把vhost所有conf改MAN為1"
 #sed -i 's/conf\/vhost/conf\/ma/g' /opt/APP/openresty/nginx/conf/nginx.conf
 sed -i 's/^\s*set $MAM 0/\    set $MAM 1/g' /opt/APP/openresty/nginx/conf/vhost/*.conf
