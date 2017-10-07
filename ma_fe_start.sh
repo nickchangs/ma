@@ -1,11 +1,11 @@
 #!/bin/bash
-#sed -i 's/set $MAM 0/set $MAM 1/g' /opt/APP/openresty/nginx/conf/vhost/*.conf
-echo "把nginx.conf內include vhost下所有conf改成include ma下所有conf"
-sed -i 's/conf\/vhost/conf\/ma/g' /opt/APP/openresty/nginx/conf/nginx.conf
+echo "把vhost所有conf改MAN為1"
+#sed -i 's/conf\/vhost/conf\/ma/g' /opt/APP/openresty/nginx/conf/nginx.conf
+sed -i 's/^\s*set $MAM 0/\    set $MAM 1/g' /opt/APP/openresty/nginx/conf/vhost/*.conf
 if [ $? = 0 ]; then
-    echo "切換ma目錄成功"
+    echo "切換MAM修改成功"
 else
-    echo "切換ma目錄失敗"
+    echo "切換MAM修改失敗"
     exit
 fi
 
