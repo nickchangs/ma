@@ -1,9 +1,13 @@
 #!/bin/bash
-if [[ -z $1 ]]; then
-	$1='07:00'
+if [ ! -n "$1" ]; then
+	stime='07:00'
+else
+    stime=$1
 fi
-if [[ -z $2 ]]; then
-    $2='08:00'
+if [ ! -n "$2" ]; then
+    etime='08:00'
+else
+    etime=$2
 fi
 echo "把vhost所有conf改MAN為1"
 #sed -i 's/conf\/vhost/conf\/ma/g' /opt/APP/openresty/nginx/conf/nginx.conf
@@ -50,9 +54,9 @@ else
     exit
 fi
 
-echo "維護開始時間：{$1}，維護停止時間：{$2}"
+echo "維護開始時間：{$stime}，維護停止時間：{$etime}"
 echo "開始寫入維護時間到maintain.html內"
-sed -i '/在线客服/i\<p\>\<span\ class\=\"red\"\>维护時間\ '$1'\-'$2'\<\/span\>\<\/p\>' /opt/Htdocs/ma/maintain.html
+sed -i '/在线客服/i\<p\>\<span\ class\=\"red\"\>维护時間\ '$stime'\-'$etime'\<\/span\>\<\/p\>' /opt/Htdocs/ma/maintain.html
 if [ $? = 0 ]; then
     echo "寫入維護時間到maintain.html內成功"
 else
@@ -60,7 +64,7 @@ else
     exit
 fi
 echo "開始寫入維護時間到wap_maintain.html內"
-sed -i '/系统正在升级维护中/a\<p\>\<span\ class\=\"red\"\>维护時間\ '$1'\-'$2'\<\/span\>\<\/p\>' /opt/Htdocs/ma/wap_maintain.html
+sed -i '/系统正在升级维护中/a\<p\>\<span\ class\=\"red\"\>维护時間\ '$stime'\-'$etime'\<\/span\>\<\/p\>' /opt/Htdocs/ma/wap_maintain.html
 if [ $? = 0 ]; then
     echo "寫入維護時間到wap_maintain.html內成功"
 else
