@@ -8,7 +8,6 @@
     6.	切回時，請一樣先使用salt "*app*" test.ping 確認所有連線是否正常  
     7.	檢查完成確認連線為true，執行salt "*app*" cmd.run "sh /root/ma_app_stop" > APP_log_ma_stop.txt  
     8.	確認APP_log_ma_stop.txt是否有執行失敗的訊息，如果執行失敗的反代請用手動切換  
-
 手動方式：
 
     1.  啟動維謢模式請編輯 vi /opt/APP/openresty/nginx/conf/nginx.conf 將#include /opt/APP/openresty/nginx/conf/ma/ma.conf 註解拿掉，且將include /opt/APP/openresty/nginx/conf/vhost/*.conf 註解   
