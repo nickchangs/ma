@@ -15,7 +15,7 @@
     Service nginx reload  
     關閉維謢模式則反過來，將*.conf移除註解，並將ma.conf註解，後再重新load nginx  
     
-快速切換前台維護模式sop  
+快速切換前台維護模式sop:
 
     1.	SSH登入splunk 172.16.100.96  user:root  pw:xxxxx  
     2.	執行 salt "*fe*" test.ping 以確認所有fe是否連線正常  
@@ -26,7 +26,7 @@
     7.	檢查完成確認連線為true，執行salt "*fe*" cmd.run "sh /root/ma_fe_stop" > FE_log_ma_stop.txt  
     8.	確認FE_log_ma_stop.txt是否有執行失敗的訊息，如果執行失敗的反代請用手動切換  
     
-手動方式：  
+手動方式：
 
     啟動維謢模式請編輯 vi /opt/APP/openresty/nginx/conf/vhost/*.conf，將http&https conf檔內的MAM由0改為1，後重新load nginx服務  
     關閉時請編輯 vi /opt/APP/openresty/nginx/conf/vhost/*.conf，將http&https conf檔內的MAM由1改為0，後重新load nginx服務
