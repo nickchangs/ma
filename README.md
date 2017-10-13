@@ -1,6 +1,6 @@
 ##快速切換app維護模式sop:
 
-    1.	SSH登入splunk 172.16.100.96  user:root  pw:as2017!@#  
+    1.	SSH登入splunk 172.16.100.96  user:root  pw:xxxxxx
     2.	執行 salt "*app*" test.ping 以確認所有app是否連線正常  
     3.	執行上面執行如果是有 Minion did not return. [Not connected]，請再執行一次salt "*app*" test.ping ，一定要所有回應為true為正常連線，如果測試一直有not connected，請restart salt-master 服務，再試一次  
     4.	確認所有連線皆為True，執行salt "*app*" cmd.run "sh /root/ma_app_start.sh 09:00 16:00" > APP_log_ma_start.txt  
