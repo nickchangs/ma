@@ -11,9 +11,9 @@
     
 手動方式：
     
-    $1.  啟動維謢模式請編輯 vi /opt/APP/openresty/nginx/conf/nginx.conf 將#include /opt/APP/openresty/nginx/conf/ma/ma.conf 註解拿掉，且將include /opt/APP/openresty/nginx/conf/vhost/*.conf 註解  
-    $2.  Service nginx reload  
-    $3.  關閉維謢模式則反過來，將*.conf移除註解，並將ma.conf註解，後再重新load nginx  
+    1.  啟動維謢模式請編輯 vi /opt/APP/openresty/nginx/conf/nginx.conf 將#include /opt/APP/openresty/nginx/conf/ma/ma.conf 註解拿掉，且將include /opt/APP/openresty/nginx/conf/vhost/*.conf 註解  
+    2.  Service nginx reload  
+    3.  關閉維謢模式則反過來，將*.conf移除註解，並將ma.conf註解，後再重新load nginx  
     
 快速切換前台維護模式sop:
 
