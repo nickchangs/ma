@@ -21,7 +21,7 @@ case "$1" in
     case "$#" in
     "2")
         echo "只輸入IP"
-        grep "^[- ].*$2" $filepathe > /dev/null
+        grep "^[-A INPUT ].*.$2/32" $filepathe > /dev/null
         if [ $? = 1 ] ;then
             echo "開始將IP：$2 加入白名單"
             #看是否被註解
@@ -57,7 +57,7 @@ case "$1" in
         ;;
     "3")
         echo "輸入3個參數"
-        grep "^[- ].*$2" $filepathe > /dev/null
+        grep "^[-A INPUT ].*.$2/32" $filepathe > /dev/null
         if [ $? = 1 ] ;then
             echo "開始將IP：$2 加入白名單"
             #看是否被註解
