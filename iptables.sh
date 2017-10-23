@@ -39,7 +39,7 @@ case "$1" in
             #如果移掉註解或新增記錄成功，就重載iptables        
             if [ $? = 0 ] ;then
                 echo "開始重新載入iptables"
-                systemctl reload iptables
+                #systemctl reload iptables
                 if [ $? = 0 ] ;then
                     echo "iptables重載成功"
                 else
@@ -74,7 +74,7 @@ case "$1" in
             #如果移掉註解或新增記錄成功，就重載iptables        
             if [ $? = 0 ] ;then
                 echo "開始重新載入iptables"
-                systemctl reload iptables
+                #systemctl reload iptables
                 if [ $? = 0 ] ;then
                     echo "iptables重載成功"
                 else
@@ -111,7 +111,7 @@ case "$1" in
         exit
     fi
     echo "開始重新載入iptables"
-    systemctl reload iptables
+    #systemctl reload iptables
     if [ $? = 0 ] ;then
         echo "iptables重載成功"
     else
